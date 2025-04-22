@@ -2,7 +2,12 @@
 #include <iostream>
 
 void OrderBook::add_order(const Order& order){
-    // Implement adding orders
+    if(order.side == Side::BUY){
+        bids[order.price].push_back(order);
+    } else {
+        asks[order.price].push_back(order);
+    }
+    order_lookup[order.id] = std::make_pair(order.price, order.side);
 }
 
 std::optional<Trade> OrderBook::match_order(const Order& order){
