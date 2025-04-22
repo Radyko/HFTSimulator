@@ -10,14 +10,14 @@ void OrderBook::add_order(const Order& order){
     order_lookup[order.id] = std::make_pair(order.price, order.side);
 }
 
-std::optional<Trade> OrderBook::match_order(const Order& order){
-    // Implement order matching
-    return std::nullopt;
-}
+// std::optional<Trade> OrderBook::match_order(const Order& order){
+//     // Implement order matching
+//     return std::nullopt;
+// }
 
-void OrderBook::cancel_order(uint64_t order_id){
-    // Use order_lookup to find and remove the order
-}
+// void OrderBook::cancel_order(uint64_t order_id){
+//     // Use order_lookup to find and remove the order
+// }
 
 void OrderBook::print_top_of_book() const {
     std::cout << "Top of Book: " << std::endl; 
@@ -34,4 +34,5 @@ void OrderBook::print_top_of_book() const {
         std::cout << "Best Ask: " << price << " (" << orders.size() << " orders)" << std::endl;
     } else {
         std::cout << "No asks." << std::endl;
+    } 
 }
